@@ -5,5 +5,8 @@ public class Chips extends Extras {
         super(name);
     }
 
-
+    @Override
+    public double getPrice() {
+        return 1.50;
+    }
 }

@@ -5,4 +5,9 @@ public class Sauce extends Toppings{
     public Sauce(String name, double price) {
         super(name, price);
     }
+
+    @Override
+    public double getPrice() {
+        return 0;
+    }
 }

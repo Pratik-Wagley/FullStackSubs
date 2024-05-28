@@ -17,4 +17,17 @@ public class Drink extends Extras implements IGetPrice {
     public void setSize(String size) {
         this.size = size;
     }
+
+    @Override
+    public double getPrice() {
+        double price = 0;
+        if (getSize().equals("Small")) {
+            price = 2.00;
+        } else if (getSize().equals("Medium")) {
+            price = 2.50;
+        } else if (getSize().equals("Large")) {
+            price = 3.00;
+        }
+        return price;
+    }
 }
