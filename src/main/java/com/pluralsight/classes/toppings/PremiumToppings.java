@@ -2,9 +2,9 @@ package com.pluralsight.classes.toppings;
 
 public class PremiumToppings extends Toppings{
     private boolean extra;
-    private String size;
+    private int size;
 
-    public PremiumToppings(String name, double price, boolean extra, String size) {
+    public PremiumToppings(String name, double price, boolean extra, int size) {
         super(name, price);
         this.extra = extra;
         this.size = size;
@@ -18,11 +18,16 @@ public class PremiumToppings extends Toppings{
         this.extra = extra;
     }
 
-    public String getSize() {
+    public int getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(int size) {
         this.size = size;
+    }
+
+    @Override
+    public double getPrice() {
+        return 0;
     }
 }

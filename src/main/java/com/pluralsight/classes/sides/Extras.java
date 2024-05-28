@@ -6,9 +6,9 @@ public class Extras implements IGetPrice {
     private String name;
     private double price;
 
-    public Extras(String name, double price) {
+    public Extras(String name) {
         this.name = name;
-        this.price = price;
+        this.price = 1.50;
     }
 
     public String getName() {

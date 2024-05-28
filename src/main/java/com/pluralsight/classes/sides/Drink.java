@@ -1,10 +1,12 @@
 package com.pluralsight.classes.sides;
 
-public class Drink extends Extras implements {
+import com.pluralsight.interfaces.IGetPrice;
+
+public class Drink extends Extras implements IGetPrice {
     private String size;
 
-    public Drink(String name, double price, String size) {
-        super(name, price);
+    public Drink(String name, String size) {
+        super(name);
         this.size = size;
     }
 
@@ -15,5 +17,4 @@ public class Drink extends Extras implements {
     public void setSize(String size) {
         this.size = size;
     }
-
 }

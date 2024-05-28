@@ -1,12 +1,12 @@
 package com.pluralsight.classes.toppings;
 
-public class Toppings {
+public abstract class Toppings {
     private String name;
     private double price;
 
     public Toppings(String name, double price) {
         this.name = name;
-        this.price = price;
+        this.price = 0;
     }
 
     public String getName() {
@@ -17,12 +17,11 @@ public class Toppings {
         this.name = name;
     }
 
-    public double getPrice() {
-        return price;
-    }
+    abstract public double getPrice();
 
     public void setPrice(int price) {
         this.price = price;
     }
+
 
 }
