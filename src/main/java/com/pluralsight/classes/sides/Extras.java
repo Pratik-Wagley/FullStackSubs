@@ -1,10 +1,12 @@
-package com.pluralsight.classes.toppings;
+package com.pluralsight.classes.sides;
 
-public class Toppings {
+import com.pluralsight.interfaces.IGetPrice;
+
+public class Extras implements IGetPrice {
     private String name;
     private double price;
 
-    public Toppings(String name, double price) {
+    public Extras(String name, double price) {
         this.name = name;
         this.price = price;
     }
@@ -21,7 +23,7 @@ public class Toppings {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

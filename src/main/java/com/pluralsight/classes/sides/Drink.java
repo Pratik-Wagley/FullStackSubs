@@ -1,4 +1,19 @@
 package com.pluralsight.classes.sides;
 
-public class Drink extends Sides{
+public class Drink extends Extras implements {
+    private String size;
+
+    public Drink(String name, double price, String size) {
+        super(name, price);
+        this.size = size;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
 }
