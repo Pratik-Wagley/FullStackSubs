@@ -19,7 +19,7 @@ public abstract class Toppings {
 
     abstract public double getPrice();
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

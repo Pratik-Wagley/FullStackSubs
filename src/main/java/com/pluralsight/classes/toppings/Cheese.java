@@ -1,8 +1,9 @@
 package com.pluralsight.classes.toppings;
 
 public class Cheese extends PremiumToppings{
-    public Cheese(String name, double price, boolean extra, int size) {
-        super(name, price, extra, size);
+    public Cheese(String name, boolean extra, int size) {
+        super(name, 0, extra, size);
+        this.setPrice(getSize());
     }
     @Override
     public double getPrice() {

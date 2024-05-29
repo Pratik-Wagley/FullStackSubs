@@ -1,6 +1,8 @@
 package com.pluralsight.classes;
 
 import com.pluralsight.classes.sides.Chips;
+import com.pluralsight.classes.toppings.Cheese;
+import com.pluralsight.classes.toppings.Meat;
 import com.pluralsight.classes.toppings.PremiumToppings;
 import com.pluralsight.classes.toppings.Toppings;
 
@@ -40,6 +42,7 @@ public class UserInterface {
     }
 
     public void showOrderScreen() {
+        //i need to create a customer object
         boolean ordering = true;
 
         while (ordering) {
@@ -114,27 +117,21 @@ public class UserInterface {
                     switch (meatOfChoice) {
                         case 1:
                             meatName = "Steak";
-                            price = 2.50;
                             break;
                         case 2:
                             meatName = "Ham";
-                            price = 2.00;
                             break;
                         case 3:
                             meatName = "Salami";
-                            price = 1.75;
                             break;
                         case 4:
                             meatName = "Roast beef";
-                            price = 2.75;
                             break;
                         case 5:
                             meatName = "Chicken";
-                            price = 2.25;
                             break;
                         case 6:
                             meatName = "Bacon";
-                            price = 1.50;
                             break;
                         default:
                             System.out.println("Invalid choice. Please try again.");
@@ -145,9 +142,44 @@ public class UserInterface {
                     System.out.println("Would you like extra " + meatName + "? (Yes/No)");
                     boolean extra = scanner.nextLine().equalsIgnoreCase("Yes");
 
-                    toppings.add(new PremiumToppings(meatName, price, extra, size));
+                    toppings.add(new Meat(meatName, extra, size));
                 }
             }
+
+            boolean addingCheese = true;
+            while (addingCheese) {
+                System.out.println("What is your cheese of choice?" +
+                        "\n1). American" +
+                        "\n2). Provolone" +
+                        "\n3). Cheddar" +
+                        "\n4). Swiss" +
+                        "\n5). Done adding cheese");
+                int cheeseOfChoice = scanner.nextInt();
+                scanner.nextLine();
+
+                if (cheeseOfChoice == 5) {
+                    addingCheese = false;
+                } else {
+                    String cheeseName = "";
+                    switch (cheeseOfChoice) {
+                        case 1: cheeseName = "American"; break;
+                        case 2: cheeseName = "Provolone"; break;
+                        case 3: cheeseName = "Cheddar"; break;
+                        case 4: cheeseName = "Swiss"; break;
+                        default:
+                            System.out.println("Invalid choice. Please try again.");
+                            continue;
+                    }
+
+                    System.out.println("Would you like extra " + cheeseName + "? (Yes/No)");
+                    boolean extra = scanner.nextLine().equalsIgnoreCase("Yes");
+
+                    toppings.add(new Cheese(cheeseName, extra, size));
+                }
+            }
+
+
+
             System.out.println("1). Add another sandwich" +
                     "\n2). Finished adding sandwich");
             int userInput = scanner.nextInt();
