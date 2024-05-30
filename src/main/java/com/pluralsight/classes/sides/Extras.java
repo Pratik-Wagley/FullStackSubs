@@ -27,4 +27,11 @@ public class Extras implements IGetPrice {
         this.price = price;
     }
 
+    @Override
+    public String toString() {
+        return "Extras{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }

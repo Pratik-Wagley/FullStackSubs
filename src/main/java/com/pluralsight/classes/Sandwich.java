@@ -2,6 +2,7 @@ package com.pluralsight.classes;
 
 import com.pluralsight.classes.toppings.Toppings;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Sandwich {
@@ -13,7 +14,7 @@ public class Sandwich {
     public Sandwich(int size, String breadType, List<Toppings> toppings, boolean toasted) {
         this.size = size;
         this.breadType = breadType;
-        this.toppings = toppings;
+        this.toppings = new ArrayList<>();
         this.toasted = toasted;
     }
 
@@ -47,5 +48,28 @@ public class Sandwich {
 
     public void setToasted(boolean toasted) {
         this.toasted = toasted;
+    }
+
+    public double getPrice() {
+        double price = 0;
+        for (Toppings topping : toppings) {
+            price += topping.getPrice();
+        }
+       return price;
+    }
+
+   // public void addToppings(List<Toppings> toppings) {
+     //   toppings.add(toppings);
+    //}
+
+    @Override
+    public String toString() {
+        String toReturn =  "Sandwich{" +
+                "size=" + size +
+                ", breadType='" + breadType + '\'' +
+                ", toppings=" + toppings +
+                ", toasted=" + toasted +
+                '}';
+        return toReturn;
     }
 }

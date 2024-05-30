@@ -11,7 +11,7 @@ public class Cheese extends PremiumToppings{
         double extra = 0;
         if (getSize() == 4 && !isExtra()) {
             price = .75;
-        } if (getSize() == 4 && isExtra()) {
+        } else if (getSize() == 4 && isExtra()) {
             price = .75;
             extra = .30;
 

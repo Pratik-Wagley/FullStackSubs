@@ -9,9 +9,19 @@ import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
-   List<Toppings> toppings = new ArrayList<>();
-   List<Drink> drinks = new ArrayList<>();
-   List<Chips> chips = new ArrayList<>();
+    List<Toppings> toppings = new ArrayList<>();
+    List<Drink> drinks = new ArrayList<>();
+    List<Chips> chips = new ArrayList<>();
+    List<Sandwich> sandwiches = new ArrayList<>();
+    ReceiptFileManager receiptFileManager = new ReceiptFileManager();
+    public Sandwich sandwich;
+    public Customer customer;
+
+    final String bread = "";
+    final int size = 0;
+    final Boolean tosted = true;
+
+    public Order order = new Order();
 
     private static Scanner scanner = new Scanner(System.in);
     private static boolean running = true;
@@ -44,6 +54,11 @@ public class UserInterface {
     }
 
     public void showOrderScreen() {
+        System.out.println("Enter your name");
+        String name = scanner.nextLine();
+        System.out.println("Enter your phone number");
+        String phoneNumber = scanner.nextLine();
+        customer = new Customer(name, phoneNumber);
         //i need to create a customer object
         boolean ordering = true;
 
@@ -71,11 +86,11 @@ public class UserInterface {
                 case 4:
                     checkout();
                     ordering = false;
-                    break;
+                    return;
                 case 0:
                     cancelOrder();
                     ordering = false;
-                    break;
+                    return;
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
@@ -83,6 +98,7 @@ public class UserInterface {
     }
 
     public void addSandwich() {
+        boolean ordering = true;
         boolean addingSandwich = true;
         while (addingSandwich) {
             System.out.println("Please select your bread: " +
@@ -105,7 +121,8 @@ public class UserInterface {
                         "\n3). Salami" +
                         "\n4). Roast beef" +
                         "\n5). Chicken" +
-                        "\n6). Bacon");
+                        "\n6). Bacon" +
+                        "\n7). Done adding meat");
                 int meatOfChoice = scanner.nextInt();
                 scanner.nextLine();
 
@@ -144,6 +161,7 @@ public class UserInterface {
                     boolean extra = scanner.nextLine().equalsIgnoreCase("Yes");
 
                     toppings.add(new Meat(meatName, extra, size));
+
                 }
             }
 
@@ -163,10 +181,15 @@ public class UserInterface {
                 } else {
                     String cheeseName = "";
                     switch (cheeseOfChoice) {
-                        case 1: cheeseName = "American"; break;
-                        case 2: cheeseName = "Provolone"; break;
-                        case 3: cheeseName = "Cheddar"; break;
-                        case 4: cheeseName = "Swiss"; break;
+                        case 1:
+                            cheeseName = "American";
+                            break;
+                        case 2:
+                            cheeseName = "Provolone";
+                            break;
+                        case 3:
+                            cheeseName = "Cheddar";
+                            break;
                         default:
                             System.out.println("Invalid choice. Please try again.");
                             continue;
@@ -180,56 +203,64 @@ public class UserInterface {
             }
 
 
+            boolean addingRegularToppings = true;
+            while (addingRegularToppings) {
+                System.out.println("Select your toppings (type the number to add):" +
+                        "\n1). Lettuce" +
+                        "\n2). Peppers" +
+                        "\n3). Onions" +
+                        "\n4). Tomatoes" +
+                        "\n5). Jalapenos" +
+                        "\n6). Cucumbers" +
+                        "\n7). Pickles" +
+                        "\n8). Guacamole" +
+                        "\n9). Mushrooms" +
+                        "\n10). Done adding toppings");
+                int toppingOfChoice = scanner.nextInt();
+                scanner.nextLine();
 
+                if (toppingOfChoice == 10) {
+                    addingRegularToppings = false;
+                } else {
+                    String toppingName = "";
+                    switch (toppingOfChoice) {
+                        case 1:
+                            toppingName = "Lettuce";
+                            break;
+                        case 2:
+                            toppingName = "Peppers";
+                            break;
+                        case 3:
+                            toppingName = "Onions";
+                            break;
+                        case 4:
+                            toppingName = "Tomatoes";
+                            break;
+                        case 5:
+                            toppingName = "Jalapenos";
+                            break;
+                        case 6:
+                            toppingName = "Cucumbers";
+                            break;
+                        case 7:
+                            toppingName = "Pickles";
+                            break;
+                        case 8:
+                            toppingName = "Guacamole";
+                            break;
+                        case 9:
+                            toppingName = "Mushrooms";
+                            break;
+                        default:
+                            System.out.println("Invalid choice. Please try again.");
+                            continue;
+                    }
 
-            System.out.println("1). Add another sandwich" +
-                    "\n2). Finished adding sandwich");
-            int userInput = scanner.nextInt();
-            if (userInput == 1) {
-                addingSandwich = true;
-            } else if (userInput == 2) {
-                addingSandwich = false;
-            } else {
-                System.out.println("Invalid Command");
-            }
-        }
-        boolean addingRegularToppings = true;
-        while (addingRegularToppings) {
-            System.out.println("Select your toppings (type the number to add):" +
-                    "\n1). Lettuce" +
-                    "\n2). Peppers" +
-                    "\n3). Onions" +
-                    "\n4). Tomatoes" +
-                    "\n5). Jalapenos" +
-                    "\n6). Cucumbers" +
-                    "\n7). Pickles" +
-                    "\n8). Guacamole" +
-                    "\n9). Mushrooms" +
-                    "\n10). Done adding toppings");
-            int toppingOfChoice = scanner.nextInt();
-            scanner.nextLine();
-
-            if (toppingOfChoice == 10) {
-                addingRegularToppings = false;
-            } else {
-                String toppingName = "";
-                switch (toppingOfChoice) {
-                    case 1: toppingName = "Lettuce"; break;
-                    case 2: toppingName = "Peppers"; break;
-                    case 3: toppingName = "Onions"; break;
-                    case 4: toppingName = "Tomatoes"; break;
-                    case 5: toppingName = "Jalapenos"; break;
-                    case 6: toppingName = "Cucumbers"; break;
-                    case 7: toppingName = "Pickles"; break;
-                    case 8: toppingName = "Guacamole"; break;
-                    case 9: toppingName = "Mushrooms"; break;
-                    default:
-                        System.out.println("Invalid choice. Please try again.");
-                        continue;
+                    toppings.add(new RegularToppings(toppingName));
                 }
 
-                toppings.add(new RegularToppings(toppingName));
             }
+
             boolean addingSauces = true;
             while (addingSauces) {
                 System.out.println("Select your sauces (type the number to add):" +
@@ -248,25 +279,51 @@ public class UserInterface {
                 } else {
                     String sauceName = "";
                     switch (sauceOfChoice) {
-                        case 1: sauceName = "Mayo"; break;
-                        case 2: sauceName = "Mustard"; break;
-                        case 3: sauceName = "Ketchup"; break;
-                        case 4: sauceName = "Ranch"; break;
-                        case 5: sauceName = "Thousand Islands"; break;
-                        case 6: sauceName = "Vinaigrette"; break;
+                        case 1:
+                            sauceName = "Mayo";
+                            break;
+                        case 2:
+                            sauceName = "Mustard";
+                            break;
+                        case 3:
+                            sauceName = "Ketchup";
+                            break;
+                        case 4:
+                            sauceName = "Ranch";
+                            break;
+                        case 5:
+                            sauceName = "Thousand Islands";
+                            break;
+                        case 6:
+                            sauceName = "Vinaigrette";
+                            break;
                         default:
                             System.out.println("Invalid choice. Please try again.");
                             continue;
                     }
 
                     toppings.add(new Sauce(sauceName));
+                    sandwich = new Sandwich(size, bread, toppings, tosted);
+                    sandwiches.add(sandwich);
+                    order.setSandwiches(sandwiches);
+
+
                 }
             }
+            System.out.println("1). Add another sandwich" +
+                    "\n2). Finished adding sandwich");
+            int userInput = scanner.nextInt();
+            if (userInput == 1) {
+                addingSandwich = true;
+            } else if (userInput == 2) {
+                addingSandwich = false;
+            } else {
+                System.out.println("Invalid Command");
+            }
+
         }
-
-
-
     }
+
     public void addDrink() {
         boolean addingDrinks = true;
         while (addingDrinks) {
@@ -285,11 +342,21 @@ public class UserInterface {
             } else {
                 String drinkName = "";
                 switch (drinkOfChoice) {
-                    case 1: drinkName = "Water"; break;
-                    case 2: drinkName = "Soda"; break;
-                    case 3: drinkName = "Juice"; break;
-                    case 4: drinkName = "Tea"; break;
-                    case 5: drinkName = "Coffee"; break;
+                    case 1:
+                        drinkName = "Water";
+                        break;
+                    case 2:
+                        drinkName = "Soda";
+                        break;
+                    case 3:
+                        drinkName = "Juice";
+                        break;
+                    case 4:
+                        drinkName = "Tea";
+                        break;
+                    case 5:
+                        drinkName = "Coffee";
+                        break;
                     default:
                         System.out.println("Invalid choice. Please try again.");
                         continue;
@@ -302,24 +369,78 @@ public class UserInterface {
                 String drinkSize = scanner.nextLine();
 
                 drinks.add(new Drink(drinkName, drinkSize));
+                order.setDrinks(drinks);
             }
         }
-        
+
     }
 
     public void addChips() {
+        boolean addingChips = true;
+        while (addingChips) {
+            System.out.println("Select your chips (type the number to add):" +
+                    "\n1). Potato Chips" +
+                    "\n2). Doritos Chips" +
+                    "\n3). Pita Chips" +
+                    "\n4). Veggie Chips" +
+                    "\n5). Pretzels" +
+                    "\n6). Done adding chips");
+            int chipsOfChoice = scanner.nextInt();
+            scanner.nextLine();
 
+            if (chipsOfChoice == 6) {
+                addingChips = false;
+            } else {
+                String chipsName = "";
+                switch (chipsOfChoice) {
+                    case 1:
+                        chipsName = "Potato Chips";
+                        break;
+                    case 2:
+                        chipsName = "Doritos Chips";
+                        break;
+                    case 3:
+                        chipsName = "Pita Chips";
+                        break;
+                    case 4:
+                        chipsName = "Veggie Chips";
+                        break;
+                    case 5:
+                        chipsName = "Pretzels";
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Please try again.");
+                        continue;
+                }
+
+                chips.add(new Chips(chipsName));
+                order.setChips(chips);
+            }
+        }
     }
 
+
     public void checkout() {
+        order.displayOrder();
+        System.out.println("Your total is: $" + order.getTotal());
+        receiptFileManager.saveReceipt(order);
+        System.out.println("Would you like to checkout Yes or No");
+        String userInput = scanner.nextLine();
+        if (userInput.equalsIgnoreCase("Yes")) {
+            receiptFileManager.saveReceipt(order);
+            System.out.println("Order confirmed!" +
+                    "\nSee you soon!");
+        }
+        else if (userInput.equalsIgnoreCase("No")) {
+            System.out.println("Order cancelled");
+        }
+
 
     }
 
     public void cancelOrder() {
+        System.out.println("Order cancelled");
 
     }
+
 }
-
-
-
-

@@ -11,6 +11,9 @@ public class Order {
     private List<Chips> chips;
     private Customer customer;
 
+    public Order() {
+    }
+
     public Order(List<Sandwich> sandwiches, List<Drink> drinks, List<Chips> chips, Customer customer) {
         this.sandwiches = sandwiches;
         this.drinks = drinks;
@@ -49,6 +52,33 @@ public class Order {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+
+public  void displayOrder() {
+    for (Sandwich sandwich : sandwiches) {
+        System.out.println(sandwich.toString());
+    }
+    for (Chips chip : chips) {
+        {
+            System.out.println(chip.toString());
+        }
+    }
+    for (Drink drink : drinks) {
+        System.out.println(drink.toString());
+    }
 }
 
-//make a calculate total method
+
+public double getTotal() {
+    double total = 0;
+    for (Sandwich sandwich : sandwiches) {
+        total += sandwich.getPrice();
+    }
+    for (Chips chip : chips) {
+        total += chip.getPrice();
+    }
+    for (Drink drink : drinks) {
+        total += drink.getPrice();
+    }
+    return total;
+}
+}
