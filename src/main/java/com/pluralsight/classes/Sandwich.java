@@ -58,9 +58,9 @@ public class Sandwich {
        return price;
     }
 
-   // public void addToppings(List<Toppings> toppings) {
-     //   toppings.add(toppings);
-    //}
+    public void addToppings(Toppings topping) {
+        toppings.add(topping);
+    }
 
     @Override
     public String toString() {
@@ -69,6 +69,7 @@ public class Sandwich {
                 ", breadType='" + breadType + '\'' +
                 ", toppings=" + toppings +
                 ", toasted=" + toasted +
+                ", price=" + getPrice() +
                 '}';
         return toReturn;
     }

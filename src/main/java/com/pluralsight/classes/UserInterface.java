@@ -14,7 +14,8 @@ public class UserInterface {
     List<Chips> chips = new ArrayList<>();
     List<Sandwich> sandwiches = new ArrayList<>();
     ReceiptFileManager receiptFileManager = new ReceiptFileManager();
-    public Sandwich sandwich;
+    Sandwich sandwich = new Sandwich(0, "bread", toppings, true);
+    //public Sandwich sandwich;
     public Customer customer;
 
     final String bread = "";
@@ -59,6 +60,7 @@ public class UserInterface {
         System.out.println("Enter your phone number");
         String phoneNumber = scanner.nextLine();
         customer = new Customer(name, phoneNumber);
+        order.setCustomer(customer);
         //i need to create a customer object
         boolean ordering = true;
 
@@ -160,7 +162,10 @@ public class UserInterface {
                     System.out.println("Would you like extra " + meatName + "? (Yes/No)");
                     boolean extra = scanner.nextLine().equalsIgnoreCase("Yes");
 
-                    toppings.add(new Meat(meatName, extra, size));
+                   // toppings.add(new Meat(meatName, extra, size));
+                   order.setSandwiches((sandwich.addToppings(new Meat(meatName, extra, size)));
+                   //sandwich.addToppings(new Meat(meatName, extra, size));
+
 
                 }
             }
@@ -198,7 +203,8 @@ public class UserInterface {
                     System.out.println("Would you like extra " + cheeseName + "? (Yes/No)");
                     boolean extra = scanner.nextLine().equalsIgnoreCase("Yes");
 
-                    toppings.add(new Cheese(cheeseName, extra, size));
+                    //  toppings.add(new Cheese(cheeseName, extra, size));
+                    sandwich.addToppings(new Cheese(cheeseName, extra, size));
                 }
             }
 
@@ -256,7 +262,8 @@ public class UserInterface {
                             continue;
                     }
 
-                    toppings.add(new RegularToppings(toppingName));
+                  //  toppings.add(new RegularToppings(toppingName));
+                    sandwich.addToppings(new RegularToppings(toppingName));
                 }
 
             }
@@ -302,8 +309,9 @@ public class UserInterface {
                             continue;
                     }
 
-                    toppings.add(new Sauce(sauceName));
-                    sandwich = new Sandwich(size, bread, toppings, tosted);
+                   // toppings.add(new Sauce(sauceName));
+                    sandwich.addToppings(new Sauce(sauceName));
+                   // sandwich = new Sandwich(size, bread, toppings, tosted);
                     sandwiches.add(sandwich);
                     order.setSandwiches(sandwiches);
 

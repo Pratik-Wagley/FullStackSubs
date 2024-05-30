@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="52051238-687f-45c1-b7f5-1c2be3b17244" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/ReceiptFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/ReceiptFileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/Sandwich.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/Sandwich.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/sides/Chips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/sides/Chips.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/sides/Extras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/sides/Extras.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/toppings/Cheese.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/toppings/Cheese.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,5 +94,12 @@
       <updated>1716484805271</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="toppings" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
