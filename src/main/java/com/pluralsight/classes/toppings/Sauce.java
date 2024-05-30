@@ -2,8 +2,8 @@ package com.pluralsight.classes.toppings;
 
 public class Sauce extends Toppings{
 
-    public Sauce(String name, double price) {
-        super(name, price);
+    public Sauce(String name) {
+        super(name, 0);
     }
 
     @Override

@@ -1,8 +1,8 @@
 package com.pluralsight.classes.toppings;
 
 public class RegularToppings extends Toppings{
-    public RegularToppings(String name, double price) {
-        super(name, price);
+    public RegularToppings(String name) {
+        super(name, 0);
     }
 
     @Override

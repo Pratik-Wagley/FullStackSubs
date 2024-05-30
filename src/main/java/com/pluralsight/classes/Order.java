@@ -50,3 +50,5 @@ public class Order {
         this.customer = customer;
     }
 }
+
+//make a calculate total method

@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="52051238-687f-45c1-b7f5-1c2be3b17244" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/toppings/Cheese.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/toppings/Cheese.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/toppings/Meat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/toppings/Meat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/toppings/Toppings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/toppings/Toppings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/toppings/RegularToppings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/toppings/RegularToppings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/toppings/Sauce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/classes/toppings/Sauce.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
