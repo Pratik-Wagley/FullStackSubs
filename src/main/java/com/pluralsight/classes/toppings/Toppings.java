@@ -23,5 +23,11 @@ public abstract class Toppings {
         this.price = price;
     }
 
-
+    @Override
+    public String toString() {
+        return "Toppings{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }

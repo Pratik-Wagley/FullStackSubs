@@ -1,0 +1,8 @@
+Customer Name: pratik
+Order Details:
+Toppings:
+Sandwich{size=4, breadType='White', toppings=[com.pluralsight.classes.toppings.Meat@4d405ef7, com.pluralsight.classes.toppings.Cheese@6193b845, com.pluralsight.classes.toppings.RegularToppings@2e817b38, com.pluralsight.classes.toppings.RegularToppings@c4437c4, com.pluralsight.classes.toppings.Sauce@433c675d], toasted=true, price=2.25}Drinks:
+Soda (Size: 2.0)
+Chips:
+Pretzels
+Total Price: $5.75
