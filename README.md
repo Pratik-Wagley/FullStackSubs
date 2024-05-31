@@ -1,30 +1,20 @@
-# Financial Tracker
+# Full Stack Subs
 
 ## Description of the Project
 
-This financial tracker app is created to add deposits, and payments into a csv file. It also stores all of the transaction histories and lets you view history by date, or vendor. 
+This app allows you to order from a sandwich shop which includes sandwiches, chips, and drinks. It also creates and saves a recipt file everytime someone creates a new order. 
 
 ![Class Diagram](path/to/your/class_diagram.png)
 
 ## User Stories
-
-List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
-
-- As a user, I want to be able to input my data, so that the application can process it accordingly.
-- As a user, I want to receive immediate feedback, so I can understand what to do next.
-- As a developer, I would like to load my user's transactions into a file, so I can save their transaction history.
-- As a user, I would like there to be a add payment function, so I can log every time i make a payment
-- As a user, I would like a function that will let me add a deposit, so I can load funds into my account successfully
-- As a user, I would like a display function so I am able to view my transaction history
-- As a user, I would like a display ledger function so I can view all of my transactions
-- As a user, I would like a display deposits function so I can view all of my deposit transactions
-- As a user, I would like a display deposits function so I can view all of my deposit transactions
-- As a user, I would like a display payments function so I can view all of my payment transactions
-- As a user, I would like a function to view my transactions filtered by the date, so I can easily view a specific transaction
-- As a user, I would like a function to view my transactions filtered by the vendor, so I can easily view a specific transaction
-
-
-
+- As a user, I want to add another sandwich to my order so that I can include multiple sandwiches in a single order
+- As a user, I want to specify if I want my sandwich toasted so that I can enjoy my sandwich the way I prefer.
+- As a user, I want to request extra portions of meats and cheeses so that I can customize my sandwich to my liking.
+- As a user, I want to select the type of bread, meat, cheese, toppings and sauce for my sandwich so that I can customize my sandwich to my preference.
+- As a user, I want to checkout so that I can review and confirm my order.
+- As a user, I want to add a drink and chipsto my order so that I can include a beverage and snack in my purchase.
+- As a user, I want to exit the application from the home screen so that I can close the application when I am done.
+- As a user, I want to start a new order so that I can place an order for sandwiches, drinks, and chips.
 
 ## Setup
 To run this code, 
@@ -61,13 +51,6 @@ Follow these steps to get your application running within IntelliJ IDEA:
 - Improvement of current functionalities.
 - Possibly a Graphic user interface
 
-## Resources
-
-List resources such as tutorials, articles, or documentation that helped you during the project.
-
-- [Java Programming Tutorial](https://www.w3schools.com/java/)
-- [Java LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Java DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
 ## Thanks
 
 Express gratitude towards those who provided help, guidance, or resources:
