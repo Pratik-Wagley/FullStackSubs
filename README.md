@@ -16,6 +16,9 @@ This app allows you to order from a sandwich shop which includes sandwiches, chi
 - As a user, I want to exit the application from the home screen so that I can close the application when I am done.
 - As a user, I want to start a new order so that I can place an order for sandwiches, drinks, and chips.
 
+  ![capstone diagram](https://github.com/Pratik-Wagley/FullStackSubs/assets/166551751/5cccd731-7cc6-4987-9883-cd5fbc51d3dd)
+
+
 ## Setup
 To run this code, 
 - Open the program on IntelliJ
